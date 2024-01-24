@@ -1,3 +1,4 @@
+import java.lang.Math;
 public class Vecteur3F {
     private float premier;
     private float deuxieme;
@@ -8,32 +9,20 @@ public class Vecteur3F {
         this.troisieme = t;
     }
     public float NormeV3F() {
-        return sqrt(this.premier * this.deuxieme * this.troisieme);
+        return (float) Math.sqrt(this.premier * this.deuxieme * this.troisieme);
     }
-    public modifier(float val, int pos) {
-        switch (pos) {
-            case pos == 1 : 
-                this.premier = val;
-                break;
-            case pos == 2 : 
-                this.deuxieme = val;
-                break;
-            case pos == 3 :
-                this.troisieme = val;
-                break;
+    public void modifier(float nouvelle_val, int pos) {
+        if (pos == 1) {
+            this.premier = nouvelle_val;
         }
-        // if pos == 1 {
-        //     this.premier = val;
-        // }
-        // if pos == 2 {
-        //     this.deuxieme = val;
-        // }
-        // if pos == 3 {
-        //     this.troisieme = val;
-        // }
+        if (pos == 2) {
+            this.deuxieme = nouvelle_val;
+        }
+        if (pos == 3) {
+            this.troisieme = nouvelle_val;
+        }
     }
-    @Override
     public String toString() {
-        return "Vecteur3f : < " + this.premier + " " + this.deuxieme + " " + this.troisieme + "> De norme : " + NormeV3F();
+        return "Vecteur3f : < " + this.premier + " " + this.deuxieme + " " + this.troisieme + " > De norme : " + NormeV3F();
     }
 }
