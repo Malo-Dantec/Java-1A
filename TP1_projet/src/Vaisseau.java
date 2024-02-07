@@ -5,6 +5,7 @@ public class Vaisseau {
     public Vaisseau(String nom, int puissance) {
         this.nom = nom;
         this.puissanceDeFeu = puissance;
+        this.nombreDePassagers = 0;
     }
     public Vaisseau(String nom, int puissance, int passagers) {
         this.nom = nom;

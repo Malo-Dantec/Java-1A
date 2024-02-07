@@ -53,13 +53,13 @@ public class Flotte {
     }
 
 
-    // public int nombreDeVaisseauxSansPassagers() {
-    //     int res = 0;
-    //     for (Vaisseau vaisseau : this.flotte) {
-
-    //     }
-    //     return res;
-    // }   
+    public int nombreDeVaisseauxSansPassagers() {
+        int res = 0;
+        for (Vaisseau vaisseau : this.flotte) {
+            if (vaisseau.getNombrePassagers() == 0) res += 1; 
+        }
+        return res;
+    }   
     
     public int puissanceDeFeuMax() {
         int res = 0;
