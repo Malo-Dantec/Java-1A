@@ -14,5 +14,5 @@ public class ExecutableCave {
         assert "Nuits St George".equals(bouteille.getAppellation());
         assert maCave.contient("Bordeaux", "Pomerol", 2007);
         assert !maCave.contient("Bordeaux", "Pomerol", 2003);
-        }
+    }
 }
