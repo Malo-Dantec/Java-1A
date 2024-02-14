@@ -45,7 +45,7 @@ public class Pluviometrie {
     public boolean estPluvieuse() {
         for (Integer i : this.precipitations) {
             if (i != null && i > 0 && i-1 > 0) {
-                    return true;
+                return true;
             }
         }
         return false;
