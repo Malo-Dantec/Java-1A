@@ -17,5 +17,7 @@ public class Executable {
     //3
     System.out. println (fest1. nombreBilletConcert ( concert2 ));
     //2
+    System.out. println (fest1. nombreBilletConcert ( concert1 ));
+    System.out. println (fest1. nombreBilletConcert ( concert3 ));
     }
 }
