@@ -2,6 +2,7 @@ public class Sorcier {
     private String nom;
     private int courage;
     private int sagesse;
+    private Maison maison;
 
     public Sorcier(String nom, int courage, int sagesse) {
         this.nom = nom;

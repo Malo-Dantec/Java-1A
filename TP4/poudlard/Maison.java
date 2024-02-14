@@ -32,11 +32,28 @@ public class Maison {
 
     public Sorcier leMoinsCourageux() {
         Sorcier leMoinsCourageux = null;
-
+        for (Sorcier sorcier : this.LesSorciers) {
+            if (leMoinsCourageux != null && sorcier.getCourage() < leMoinsCourageux.getCourage()) {
+                leMoinsCourageux = sorcier;
+            }
+            else if (leMoinsCourageux == null) {
+                leMoinsCourageux = sorcier;
+            }
+        }
+        return leMoinsCourageux;
     }
 
     public Sorcier lePlusSage() {
-
+        Sorcier lePlusSage = null;
+        for (Sorcier sorcier : this.LesSorciers) {
+            if (lePlusSage != null && sorcier.getSagesse() > lePlusSage.getSagesse()) {
+                lePlusSage = sorcier;
+            }
+            else if (lePlusSage == null) {
+                lePlusSage = sorcier;
+            }
+        }
+        return lePlusSage;
     }
 
     public void trierParCourage() {
