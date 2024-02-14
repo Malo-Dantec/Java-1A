@@ -17,7 +17,7 @@ public class Cave {
     public int nbBouteillesDeRegion(String reg) {
         int res = 0;
         for (Bouteille bouteille : this.cave) {
-            if (bouteille.getRegion() == reg) res += 1;
+            if (bouteille.getRegion().equals(reg)) res += 1;
         }
         return res;
     }
@@ -40,8 +40,8 @@ public class Cave {
 
     public boolean contient(String region, String appellation, int millesime) {
         for (Bouteille bouteille : this.cave) {
-            if (bouteille.getRegion() == region &&
-                bouteille.getAppellation() == appellation && 
+            if (bouteille.getRegion().equals(region) &&
+                bouteille.getAppellation().equals(appellation) && 
                 bouteille.getMillesime() == millesime) {
                 return true;
             }
