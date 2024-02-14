@@ -11,6 +11,10 @@ public class Festival {
         this.LesBillets = new ArrayList<>();
     }
 
+    public List<Concert> getConcerts() {
+        return LesConcerts;
+    }
+
     public String getNom() {
         return this.nom;
     }
