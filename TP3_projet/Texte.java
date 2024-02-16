@@ -34,14 +34,14 @@ public class Texte {
     }
 
     public String decode(String texteEnMorse) {
-        String decode = "";
-        for (Lettre lettre : this.texte) {
-            ;
-
+        String chaine = "";
+        for (String lettre : texteEnMorse.split("___")) {
+            Lettre t = new Lettre(lettre);
+            chaine += t.toChar();
         }
-
-        return decode;
+        return chaine;
     }
+    
 
 
 

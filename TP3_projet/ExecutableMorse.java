@@ -25,5 +25,7 @@ public class ExecutableMorse {
     System.out.println(t1.toMorse());
     System.out.println(t1.contient(l));
     System.out.println(t1.contient(y));
+
+    System.out.println(decode("===_=___===_=___===_="));
     }
 }
