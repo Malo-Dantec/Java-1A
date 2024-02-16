@@ -10,22 +10,23 @@ public class Lettre{
             "===_===_=_===", "=_===_=", "=_=_=", "===", "=_=_===",
             "=_=_=_===", "=_===_===", "===_=_=_===", "===_=_===_===",
             "===_===_=_=", "_");
+
+    private static List<Character> alphabet = Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+                                                            'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
+                                                            'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ');
+
     
     public Lettre(char lettre) {
         this.lettre = lettre;
     }
 
     public Lettre(String morse) {
-        String lettre = Lettre.alphabetMorse.get(this.toNumero());
+        int res = Lettre.alphabetMorse.indexOf(morse);
+        this.lettre = Lettre.alphabet.get(res);
     }
     
     public int toNumero() {
-        if ((int) this.lettre -65 >= 0) {
-            return (int) this.lettre - 65;
-        }
-        else {
-            return 26;
-        }
+        return Lettre.alphabet.indexOf(this.lettre);
     }
 
     public char toChar() {
@@ -33,7 +34,8 @@ public class Lettre{
     }
 
     public String toMorse() {
-        return "=_==";
+        int res = Lettre.alphabet.indexOf(this.lettre);
+        return Lettre.alphabetMorse.get(res);
     }
 
     public String toString() {
