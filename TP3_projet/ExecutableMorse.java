@@ -16,12 +16,14 @@ public class ExecutableMorse {
     Lettre espace = new Lettre(' ');
     System.out.println(espace.toNumero());
 
-
-
+    Lettre l = new Lettre('L');
+    Lettre y = new Lettre('Y');
     Texte t1 = new Texte("MALO D");
     System.out.println(t1);
     System.out.println(t1.toMorse());
     System.out.println(t1.toString());
     System.out.println(t1.toMorse());
+    System.out.println(t1.contient(l));
+    System.out.println(t1.contient(y));
     }
 }

@@ -41,4 +41,13 @@ public class Lettre{
     public String toString() {
         return "lettre";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Lettre other = (Lettre) obj;
+        return lettre == other.lettre;
+    }
+
 }
