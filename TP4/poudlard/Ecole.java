@@ -14,15 +14,34 @@ public class Ecole {
     }
 
     public Maison plusGrandeMaison() {
-
+        Maison maison = null;
+        for (Maison mson : this.LesMaisons) {
+            if (maison == null) {
+                maison = mson;
+            }
+            else if (maison.nombreEleve() < mson.nombreEleve()) {
+                maison = mson;
+            }
+        }
+        return maison;
     }
 
     public List<Sorcier> lesCourageux() {
-
+        List<Sorcier> LesCourageux = new ArrayList<>();
+        for (Maison maison : this.LesMaisons) {
+            for (Sorcier sorcier : maison.getLesSorciers()) {
+                if (sorcier.estCourageux()) {
+                    LesCourageux.add(sorcier);
+                }
+            }
+        }
+        return LesCourageux;
     }
 
-    public List<Sorcier> ElevestriesParCourage() {
-        
+    public List<Sorcier> ElevesTriesParCourage() {
+        List<Sorcier> LesSorciers = new ArrayList<>();
+        List<Sorcier> SorciersParCourage = new ArrayList<>();
+        return SorciersParCourage;
     }
 
 

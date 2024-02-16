@@ -10,13 +10,20 @@ public class Maison {
     }
 
     public boolean ajouter(String nomSorcier, int courage, int sagesse) {
-        if (LesSorciers.contains(new Sorcier(nomSorcier, courage, sagesse))) {
+        Sorcier sorcier = new Sorcier(nomSorcier, courage, sagesse);
+
+        if (LesSorciers.contains(sorcier)) {
             return false;
         }
         else {
-            LesSorciers.add(new Sorcier(nomSorcier, courage, sagesse));
+            LesSorciers.add(sorcier);
+            sorcier.setMaison(this);
             return true;
         }
+    }
+
+    public List<Sorcier> getLesSorciers() {
+        return LesSorciers;
     }
 
     public int nombreEleve() {

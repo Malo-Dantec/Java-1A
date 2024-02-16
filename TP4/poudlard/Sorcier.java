@@ -22,7 +22,28 @@ public class Sorcier {
         return this.sagesse;
     }
 
+
+    
+    public void setMaison(Maison maison) {
+        this.maison = maison;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setCourage(int courage) {
+        this.courage = courage;
+    }
+
+    public void setSagesse(int sagesse) {
+        this.sagesse = sagesse;
+    }
+
+
+
     public boolean estCourageux() {
         return this.courage > 8;
     }
+
 }
