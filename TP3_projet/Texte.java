@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Texte {
@@ -8,19 +7,26 @@ public class Texte {
     public Texte(String chaine) {
         this.texte = new ArrayList<>();
         for (int i = 0; i < chaine.length() ; i++) {
-            this.texte.add(chaine.charAt(i));
+            Lettre lettre = new Lettre(chaine.charAt(i));
+            this.texte.add(lettre);
         }
-        // for (Lettre lettre : chaine) {
-        //     this.texte.add(lettre);
-        // }
     }
 
     public String toString() {
-
+        String chaine = "";
+        for (Lettre lettre : this.texte) {
+            chaine += lettre;
+        }
+        return chaine;
     }
 
     public String toMorse() {
-
+        String chaine_morse = "";
+        for (Lettre lettre : this.texte) {
+            String morse = lettre.toMorse();
+            chaine_morse += "___" + morse;
+        }
+        return chaine_morse;
     }
 
 
