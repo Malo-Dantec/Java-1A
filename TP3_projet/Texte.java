@@ -26,7 +26,7 @@ public class Texte {
             String morse = lettre.toMorse();
             chaine_morse += morse + "___";
         }
-        return chaine_morse;
+        return chaine_morse.substring(0, chaine_morse.length()-3);
     }
 
     public boolean contient(Lettre lettre) {

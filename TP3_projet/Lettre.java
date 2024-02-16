@@ -9,7 +9,7 @@ public class Lettre{
             "=_===_=_=", "===_===", "===_=", "===_===_===", "=_===_===_=",
             "===_===_=_===", "=_===_=", "=_=_=", "===", "=_=_===",
             "=_=_=_===", "=_===_===", "===_=_=_===", "===_=_===_===",
-            "===_===_=_=", "_");
+            "===_===_=_=", ".");
 
     private static List<Character> alphabet = Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                                                             'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
@@ -39,7 +39,8 @@ public class Lettre{
     }
 
     public String toString() {
-        return "lettre";
+        String morseString = Lettre.alphabetMorse.get(Lettre.alphabet.indexOf(this.lettre));
+        return morseString;
     }
 
     @Override
