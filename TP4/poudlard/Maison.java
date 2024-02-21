@@ -58,6 +58,12 @@ public class Maison {
         return plusSage;
     }
 
+    // public void trierParCourage() {
+    //     ArrayList<Sorcier> eleveTrierCourage = new ArrayList<Sorcier>();
+
+    //     this.eleves = eleveTrierCourage;
+    // }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -72,5 +78,7 @@ public class Maison {
         }
         return false;
     }
-    
+
+
+
 }

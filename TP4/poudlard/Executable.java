@@ -10,17 +10,22 @@ public class Executable {
         Maison poufsouffle = new Maison("Poufsouffle");
 
         System.out.println(poudlard.getMaisons().contains(new Maison("Serpentar")));
-        poudlard.ajouter(serpentar);
-        System.out.println(poudlard.getMaisons().contains(new Maison("Serpentar")));
+        System.out.println(poudlard.getMaisons().contains(new Maison("Griffondor")));
 
+        poudlard.ajouter(serpentar);
         poudlard.ajouter(griffondor);
         poudlard.ajouter(serdaigle);
         poudlard.ajouter(poufsouffle);
 
+        System.out.println(poudlard.getMaisons().contains(new Maison("Serpentar")));
+        System.out.println(poudlard.getMaisons().contains(new Maison("Griffondor")));
+
         System.out.println(serpentar.getEleves().contains(new Sorcier("Adrian", 9, 7)));
         System.out.println(serpentar.nombreEleve());
         System.out.println(serpentar.contientCourageux());
+
         serpentar.ajouter("Adrian", 9, 7);
+        
         System.out.println(serpentar.contientCourageux());
         System.out.println(serpentar.nombreEleve());
         System.out.println(serpentar.getEleves().contains(new Sorcier("Adrian", 9, 7)));
