@@ -9,12 +9,16 @@ public class Executable {
     assert orleans.equals(orleans);
     assert orleans.equals(cenabum);
 
-    Region cvl = new Region("cvl")
+    Region cvl = new Region("cvl");
 
+    cvl.ajouteVille(orleans);
+    cvl.ajouteVille(cenabum);
+    cvl.ajouteVille(olivet);
+    System.out.println(cvl.VilleParRegion());
+    cvl.trierParNbHabitants();
+    System.out.println(cvl.VilleParRegion());
+    cvl.trierParNom();
+    System.out.println(cvl.VilleParRegion());
 
-
-
-    System.out.println(orleans.VilleParRegion());
     }
-
 }
