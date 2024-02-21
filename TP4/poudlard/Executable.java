@@ -25,7 +25,7 @@ public class Executable {
         System.out.println(serpentar.contientCourageux());
 
         serpentar.ajouter("Adrian", 9, 7);
-        
+
         System.out.println(serpentar.contientCourageux());
         System.out.println(serpentar.nombreEleve());
         System.out.println(serpentar.getEleves().contains(new Sorcier("Adrian", 9, 7)));
@@ -43,5 +43,10 @@ public class Executable {
         System.out.println(poudlard.plusGrandeMaison().getNom());
         System.out.println(poudlard.lesCourageux());
         System.out.println(serpentar.leMoinsCourageux().getNom());
+
+        System.out.println(serpentar.getEleves());
+        serpentar.trierParCourage();
+        System.out.println(serpentar.getEleves());
+
     }
 }

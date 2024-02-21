@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Maison {
 
@@ -58,11 +59,9 @@ public class Maison {
         return plusSage;
     }
 
-    // public void trierParCourage() {
-    //     ArrayList<Sorcier> eleveTrierCourage = new ArrayList<Sorcier>();
-
-    //     this.eleves = eleveTrierCourage;
-    // }
+    public void trierParCourage() {
+        Collections.sort(this.eleves, new ComparateurCourage());
+    }
 
     @Override
     public boolean equals(Object obj) {
