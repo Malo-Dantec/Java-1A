@@ -8,5 +8,13 @@ public class Executable {
     assert !orleans.equals(olivet);
     assert orleans.equals(orleans);
     assert orleans.equals(cenabum);
+
+    Region cvl = new Region("cvl")
+
+
+
+
+    System.out.println(orleans.VilleParRegion());
     }
+
 }

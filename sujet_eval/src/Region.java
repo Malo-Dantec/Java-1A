@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Region {
     private String nom;
@@ -20,6 +21,10 @@ public class Region {
         }
     }
 
+    public ArrayList<Ville> VilleParRegion() {
+        return this.LesVilles;
+    }
+
     public int nbVilles() {
         return this.LesVilles.size();
     }
@@ -32,6 +37,10 @@ public class Region {
         return res;
     }
 
+    public String getNom() {
+        return this.nom;
+    }
+
     public Ville laMoinspeuplee() {
         Ville laMoinsPeuplee = null;
         for (Ville ville : this.LesVilles) {
@@ -39,6 +48,14 @@ public class Region {
             else if (laMoinsPeuplee.getNbHabitants() > ville.getNbHabitants()) {laMoinsPeuplee = ville;}
         }
         return laMoinsPeuplee;
+    }
+
+    public void trierParNbHabitants() {
+        Collections.sort(this.LesVilles, new ComparateurNbHabitants());
+    }
+
+    public void trierParNom() {
+        Collections.sort(this.LesVilles, new ComparateurNom());
     }
 
 }
