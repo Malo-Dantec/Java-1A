@@ -1,8 +1,8 @@
 public class Sorcier {
+
     private String nom;
     private int courage;
     private int sagesse;
-    private Maison maison;
 
     public Sorcier(String nom, int courage, int sagesse) {
         this.nom = nom;
@@ -22,28 +22,27 @@ public class Sorcier {
         return this.sagesse;
     }
 
-
-    
-    public void setMaison(Maison maison) {
-        this.maison = maison;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setCourage(int courage) {
-        this.courage = courage;
-    }
-
-    public void setSagesse(int sagesse) {
-        this.sagesse = sagesse;
-    }
-
-
-
     public boolean estCourageux() {
-        return this.courage > 8;
+        return this.getCourage() > 8;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Sorcier) {
+            Sorcier sorcier = (Sorcier) obj;
+            return this.getNom().equals(sorcier.getNom()) && this.getCourage() == sorcier.getCourage() && this.getSagesse() == sorcier.getSagesse();
+        }
+        return false;
+    }
+    
+    @Override
+    public String toString() {
+        return this.getNom();
+    }
 }

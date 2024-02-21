@@ -1,48 +1,50 @@
 import java.util.ArrayList;
 import java.util.List;
+
 public class Ecole {
+
     private String nom;
-    private List<Maison> LesMaisons;
+    private ArrayList<Maison> maisons;
 
     public Ecole(String nom) {
         this.nom = nom;
-        LesMaisons = new ArrayList<>();
+        this.maisons = new ArrayList<Maison>();
     }
 
+    public String getNom() {
+        return this.nom;
+    }
+
+    public ArrayList<Maison> getMaisons() {
+        return this.maisons;
+    }
     public void ajouter(Maison maison) {
-        LesMaisons.add(maison);
+        if (!this.maisons.contains(maison)) {
+            this.maisons.add(maison);
+        }
+        
     }
 
     public Maison plusGrandeMaison() {
-        Maison maison = null;
-        for (Maison mson : this.LesMaisons) {
-            if (maison == null) {
-                maison = mson;
-            }
-            else if (maison.nombreEleve() < mson.nombreEleve()) {
-                maison = mson;
+        Maison plusGrandeMaison = this.maisons.get(0);
+        for (Maison maison : this.maisons) {
+            if (maison.nombreEleve() > plusGrandeMaison.nombreEleve()) {
+                plusGrandeMaison = maison;
             }
         }
-        return maison;
+        return plusGrandeMaison;
     }
 
     public List<Sorcier> lesCourageux() {
-        List<Sorcier> LesCourageux = new ArrayList<>();
-        for (Maison maison : this.LesMaisons) {
-            for (Sorcier sorcier : maison.getLesSorciers()) {
-                if (sorcier.estCourageux()) {
-                    LesCourageux.add(sorcier);
+        List<Sorcier> courageux = new ArrayList<Sorcier>();
+        for (Maison maison : this.maisons) {
+            for (Sorcier eleve : maison.getEleves()) {
+                if (eleve.estCourageux()) {
+                    courageux.add(eleve);
                 }
             }
         }
-        return LesCourageux;
+        return courageux;
     }
-
-    public List<Sorcier> ElevesTriesParCourage() {
-        List<Sorcier> LesSorciers = new ArrayList<>();
-        List<Sorcier> SorciersParCourage = new ArrayList<>();
-        return SorciersParCourage;
-    }
-
-
+    
 }

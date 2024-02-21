@@ -1,74 +1,76 @@
 import java.util.ArrayList;
-import java.util.List;
+
 public class Maison {
+
     private String nom;
-    private List<Sorcier> LesSorciers;
+    private ArrayList<Sorcier> eleves;
 
     public Maison(String nom) {
         this.nom = nom;
-        LesSorciers = new ArrayList<>();
+        this.eleves = new ArrayList<Sorcier>();
     }
 
-    public boolean ajouter(String nomSorcier, int courage, int sagesse) {
-        Sorcier sorcier = new Sorcier(nomSorcier, courage, sagesse);
-
-        if (LesSorciers.contains(sorcier)) {
-            return false;
-        }
-        else {
-            LesSorciers.add(sorcier);
-            sorcier.setMaison(this);
-            return true;
+    public void ajouter(String nom, int courage, int sagesse) {
+        Sorcier s = new Sorcier(nom, courage, sagesse);
+        if (!this.eleves.contains(s)) {
+            this.eleves.add(s);
         }
     }
 
-    public List<Sorcier> getLesSorciers() {
-        return LesSorciers;
+    public String getNom() {
+        return this.nom;
     }
 
     public int nombreEleve() {
-        return LesSorciers.size();
+        return this.eleves.size();
+    }
+
+    public ArrayList<Sorcier> getEleves() {
+        return this.eleves;
     }
 
     public boolean contientCourageux() {
-        for (Sorcier sorcier: this.LesSorciers) {
-            if (sorcier.estCourageux() == true) {return true;}
+        for (Sorcier eleve : this.eleves) {
+            if (eleve.estCourageux()) {
+                return true;
+            }
         }
         return false;
     }
 
     public Sorcier leMoinsCourageux() {
-        Sorcier leMoinsCourageux = null;
-        for (Sorcier sorcier : this.LesSorciers) {
-            if (leMoinsCourageux != null && sorcier.getCourage() < leMoinsCourageux.getCourage()) {
-                leMoinsCourageux = sorcier;
-            }
-            else if (leMoinsCourageux == null) {
-                leMoinsCourageux = sorcier;
+        Sorcier moinsCourageux = this.eleves.get(0);
+        for (Sorcier eleve : this.eleves) {
+            if (eleve.getCourage() < moinsCourageux.getCourage()) {
+                moinsCourageux = eleve;
             }
         }
-        return leMoinsCourageux;
+        return moinsCourageux;
     }
 
     public Sorcier lePlusSage() {
-        Sorcier lePlusSage = null;
-        for (Sorcier sorcier : this.LesSorciers) {
-            if (lePlusSage != null && sorcier.getSagesse() > lePlusSage.getSagesse()) {
-                lePlusSage = sorcier;
-            }
-            else if (lePlusSage == null) {
-                lePlusSage = sorcier;
+        Sorcier plusSage = this.eleves.get(0);
+        for (Sorcier eleve : this.eleves) {
+            if (eleve.getSagesse() > plusSage.getSagesse()) {
+                plusSage = eleve;
             }
         }
-        return lePlusSage;
+        return plusSage;
     }
 
-    public void trierParCourage() {
-
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Maison) {
+            Maison maison = (Maison) obj;
+            return this.getNom().equals(maison.getNom());
+        }
+        return false;
     }
-
-
-
-
-
+    
 }
