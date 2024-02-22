@@ -19,10 +19,13 @@ public class Ville {
     public boolean equals(Object o) {
         if (o == null) {return false;}
         if (o == this) {return true;}
-        if (o instanceof Ville) {
-            Ville ville = (Ville) o;
-            return o == ville;
-        }
-        return false;
+        if (!(o instanceof Ville)) {return false;}
+        Ville ville = (Ville) o;
+        return ville.getNom().equals(this.getNom()) && ville.getNbHabitants() == this.getNbHabitants();
+    }
+
+    @Override
+    public String toString() {
+        return this.getNom();
     }
 }
