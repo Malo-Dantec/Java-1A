@@ -7,6 +7,7 @@ public class Region {
 
     public Region(String nom) {
         this.nom = nom;
+        this.LesVilles = new ArrayList<Ville>();
     }
 
     public void ajouteVille(Ville ville) {
@@ -52,10 +53,6 @@ public class Region {
 
     public void trierParNbHabitants() {
         Collections.sort(this.LesVilles, new ComparateurNbHabitants());
-    }
-
-    public void trierParNom() {
-        Collections.sort(this.LesVilles, new ComparateurNom());
     }
 
 }

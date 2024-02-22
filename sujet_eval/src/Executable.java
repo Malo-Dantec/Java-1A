@@ -17,8 +17,6 @@ public class Executable {
     System.out.println(cvl.VilleParRegion());
     cvl.trierParNbHabitants();
     System.out.println(cvl.VilleParRegion());
-    cvl.trierParNom();
-    System.out.println(cvl.VilleParRegion());
 
     }
 }
