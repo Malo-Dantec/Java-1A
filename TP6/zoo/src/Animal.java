@@ -11,7 +11,7 @@ public abstract class Animal{
 
     @Override
     public String toString() {
-        return this.nom + " pèse " + this.poids + " kg";
+        return this.getClass() + " " + this.nom + " pèse " + this.poids + " kg";
     }
 
 }
