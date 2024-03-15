@@ -13,7 +13,7 @@ public class Demineur extends Plateau {
     }
 
     public void reveler(int x, int y) {
-        
+
     }
 
     public void marquer(int x, int y) {
@@ -21,7 +21,7 @@ public class Demineur extends Plateau {
     }
 
     public boolean estGagnee() {
-
+        
     }
 
     public boolean estPerdue() {

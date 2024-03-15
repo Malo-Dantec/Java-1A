@@ -1,4 +1,4 @@
-public class CaseIntelligente {
+public class CaseIntelligente extends Case {
 
     public CaseIntelligente() {
 
@@ -16,5 +16,5 @@ public class CaseIntelligente {
 
     }
 
-    
+
 }
