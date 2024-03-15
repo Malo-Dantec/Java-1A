@@ -9,11 +9,11 @@ public class CaseIntelligente extends Case {
     }
 
     public int nombreBombesVoisines() {
-
+        return 1;
     }
 
     public String toString() {
-
+        return "";
     }
 
 

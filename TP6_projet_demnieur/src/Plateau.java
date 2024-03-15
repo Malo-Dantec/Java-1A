@@ -7,7 +7,6 @@ public class Plateau {
     private int nbColonnes;
     private int pourcentageDeBombes;
     private int nbBombes;
-    private List<CaseIntelligente> LesCasesIntelligentes;
     private List<Case> LesCases;
 
     public Plateau(int nbLignes, int nbColonnes, int pourcentage) {
@@ -54,7 +53,7 @@ public class Plateau {
     }
 
     public CaseIntelligente getCase(int numLigne, int numColonne) {
-
+        
     }
 
     public int getNbCasesMarquees() {
@@ -73,7 +72,10 @@ public class Plateau {
     }
 
     public void reset() {
-
+        this.LesCases = new ArrayList<>();
+        for (int i = 0 ; i < this.nbLignes * this.nbColonnes ; i++) {
+            this.LesCases.add(new Case());
+        }
     }
 
 

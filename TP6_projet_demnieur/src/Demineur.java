@@ -21,15 +21,17 @@ public class Demineur extends Plateau {
     }
 
     public boolean estGagnee() {
-        
+        return !this.gameOver;
     }
 
     public boolean estPerdue() {
-
+        return this.gameOver;
     }
 
     public void reset() {
-
+        this.reset();
+        this.gameOver = false;
+        this.score = 0;
     }
 
     public void affiche(){
