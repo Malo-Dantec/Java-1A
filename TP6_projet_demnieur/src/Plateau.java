@@ -7,6 +7,7 @@ public class Plateau {
     private int nbColonnes;
     private int pourcentageDeBombes;
     private int nbBombes;
+    private ArrayList<CaseIntelligente> LesCasesIntelligentes;
 
     public Plateau(int nbLignes, int nbColonnes, int pourcentage) {
         this.nbLignes = nbLignes;
@@ -15,7 +16,7 @@ public class Plateau {
     }
 
     private void creerLesCasesVides() {
-
+        
     }
 
     private void rendLesCasesIntelligentes() {
