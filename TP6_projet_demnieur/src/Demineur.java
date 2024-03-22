@@ -6,6 +6,8 @@ public class Demineur extends Plateau {
 
     public Demineur(int nbLignes, int nbColonnes, int pourcentage) {
         super(nbLignes, nbColonnes, pourcentage);
+        this.gameOver = false;
+        this.score = 0;
     }
 
     public int getScore() {

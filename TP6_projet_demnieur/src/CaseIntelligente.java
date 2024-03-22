@@ -1,4 +1,8 @@
+import java.util.List;
+
 public class CaseIntelligente extends Case {
+
+    private List<Case> LesVoisines;
 
     public CaseIntelligente() {
 
@@ -9,11 +13,20 @@ public class CaseIntelligente extends Case {
     }
 
     public int nombreBombesVoisines() {
-        return 1;
+        int res = 0;
+        for (Case cases : this.LesVoisines) {
+            if (cases.contientUneBombe()) {res += 1;}
+        }
+        return res;
     }
 
     public String toString() {
-        return "";
+        if (this.estMarquee()) {return "?";}
+        else if (this.estDecouverte()) {
+            if (this.contientUneBombe()) {return "@";}
+            else {return "" + this.nombreBombesVoisines();}
+        }
+        else {return " ";}
     }
 
 
