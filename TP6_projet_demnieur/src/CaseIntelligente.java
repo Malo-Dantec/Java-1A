@@ -17,11 +17,12 @@ public class CaseIntelligente extends Case {
     }
 
     public int nombreBombesVoisines() {
-        int res = 0;
-        for (Case cases : this.LesVoisines) {
-            if (cases.contientUneBombe()) {res += 1;}
+        if(this.LesVoisines.isEmpty()) {return 0;}
+        int cptBombes = 0;
+        for(Case c : this.LesVoisines) {
+            if(c.contientUneBombe()) {cptBombes += 1;}
         }
-        return res;
+        return cptBombes;
     }
 
     public String toString() {
