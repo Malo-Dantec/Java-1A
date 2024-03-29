@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class CaseIntelligente extends Case {
@@ -5,11 +6,14 @@ public class CaseIntelligente extends Case {
     private List<Case> LesVoisines;
 
     public CaseIntelligente() {
-
+        super();
+        this.LesVoisines = new ArrayList<>();
     }
 
-    public void ajouteVoisine(Case uneCase) {
-
+    public void ajouteVoisine(Case c) {
+        if (c != null) {
+            this.LesVoisines.add(c);
+        }
     }
 
     public int nombreBombesVoisines() {

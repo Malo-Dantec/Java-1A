@@ -7,20 +7,20 @@ public class Plateau {
     private int nbColonnes;
     private int pourcentageDeBombes;
     private int nbBombes;
-    private List<CaseIntelligente> LesCases;
+    private List<List<CaseIntelligente>> LePlateau;
 
     public Plateau(int nbLignes, int nbColonnes, int pourcentage) {
         this.nbLignes = nbLignes;
         this.nbColonnes = nbColonnes;
         this.pourcentageDeBombes = pourcentage;
         this.nbBombes = 0;
-        this.LesCases = new ArrayList<>();
+        this.LePlateau = new ArrayList<>();
         for (int i = 0; i < nbLignes; i++) {
             List<CaseIntelligente> ligne = new ArrayList<>();
             for (int j = 0; j < nbColonnes; j++) {
                 ligne.add(new CaseIntelligente());
             }
-            this.LesCases.add(ligne);
+            this.LePlateau.add(ligne);
         }
         this.rendLesCasesIntelligentes();
         this.poseDesBombesAleatoirement();
@@ -60,14 +60,14 @@ public class Plateau {
 
     public CaseIntelligente getCase(int numLigne, int numColonne) {
         if (numLigne >= 0 && numLigne < this.getNbLignes() && numColonne >= 0 && numColonne < this.getNbColonnes()) {
-            return this.LesCases.get(numLigne).get(numColonne);
+            return this.LePlateau.get(numLigne).get(numColonne);
         }
         return null;
     }
 
     public int getNbCasesMarquees() {
         int res = 0;
-        for (List<CaseIntelligente> ligne : this.LesCases) {
+        for (List<CaseIntelligente> ligne : this.LePlateau) {
             for (CaseIntelligente cases : ligne) {
                 if (cases.estMarquee()) {
                     res++;
@@ -78,12 +78,12 @@ public class Plateau {
     }
 
     public void poseBombe(int x, int y) {
-        Case cases = this.LesCases.get(x).get(y);
+        Case cases = this.LePlateau.get(x).get(y);
         cases.poseBombe();
     }
 
     public void reset() {
-        for (List<CaseIntelligente> ligne : this.LesCases) {
+        for (List<CaseIntelligente> ligne : this.LePlateau) {
             for (CaseIntelligente cases : ligne) {
                 cases.reset();
             }

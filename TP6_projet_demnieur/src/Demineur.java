@@ -15,11 +15,11 @@ public class Demineur extends Plateau {
     }
 
     public void reveler(int x, int y) {
-
+        
     }
 
     public void marquer(int x, int y) {
-
+        this.get(x).get(y).marquer();
     }
 
     public boolean estGagnee() {
