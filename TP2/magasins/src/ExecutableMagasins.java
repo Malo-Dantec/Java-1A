@@ -9,5 +9,7 @@ public class ExecutableMagasins {
         System.out.println(fleurus.toString());;
         System.out.println(trainou.toString());
         System.out.println(trainou.getNomVille());
+        trainou.afficheMagasins();
+        System.out.println(trainou.ouvertsLeLundi());
     }
 }
