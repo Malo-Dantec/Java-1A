@@ -26,7 +26,7 @@ public class Exec{
         // mystere(l);
         // afficheListe(l);
 
-        List<Integer> list = Arrays.asList(3, 6, 3, 2, 1, -3, 2);
+        List<Integer> list = Arrays.asList(3, 6, 3, 2, 1, -3, 2, 2, 2, 2);
         System.out.println(Iterateur.mystere0(list));
 
         System.out.println(Iterateur.mystere1(list, -4));
@@ -36,6 +36,22 @@ public class Exec{
             System.out.print(mystere.next() + " ");
         }
         System.out.println();
+
+
+        System.out.println(Iterateur.plusLongPlateau(list));
+
+
+        Range range = new Range(1, 10, 2);
+        for (int i : range) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+
+        // for(Integer i : new Range(10)){
+        //     System.out.println(i);
+        // }
+
     }
     public static <T extends Comparable<T>> T mystere(Collection<T> coll) {
         Iterator<T> iterateur = coll.iterator();
@@ -50,7 +66,7 @@ public class Exec{
     }
 
 
-    public static <T> void afficheListe(List<T> list) {
+    public static <T> void afficheListe(Iterable<T> list) {
         Iterator<T> iterateur = list.iterator();
         while(iterateur.hasNext()) {
             System.out.print(iterateur.next() + " ");

@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.List;
 
 public class Iterateur {
 
@@ -22,5 +23,33 @@ public class Iterateur {
             }
         }
         return false;
+    }
+
+    public static int plusLongPlateau(List<Integer> liste) {
+        if (liste == null || liste.isEmpty()) {
+            return 0;
+        }
+        Iterator<Integer> iterateur = liste.iterator();
+        int maxPlateau = 1;
+        int indActu = 1;
+        int prec = iterateur.next();
+
+        while (iterateur.hasNext()) {
+            int suivant = iterateur.next();
+            if (suivant == prec) {
+                indActu++;
+            } else {
+                if (indActu > maxPlateau) {
+                    maxPlateau = indActu;
+                }
+                indActu = 1;
+            }
+            prec = suivant;
+        }
+        if (indActu > maxPlateau) {
+            maxPlateau = indActu;
+        }
+
+        return maxPlateau;
     }
 }
