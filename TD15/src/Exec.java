@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Exec{
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         // List<Integer> l = new ArrayList<>();
         // l.add(5);
