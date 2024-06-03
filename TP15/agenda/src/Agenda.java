@@ -22,7 +22,7 @@ public class Agenda implements Iterable<RendezVous>
     public void ajoute (RendezVous v) throws PasDeDisponibiliteException{
         for(RendezVous existant : this.contenu)
             if(v.intersecte(existant))
-                throw new PasDeDisponibiliteException("Déjà un rendez vous à cette heure", v);
+                throw new PasDeDisponibiliteException("Déjà un rendez vous à cette heure", existant);
         this.contenu.add(v);
     }
 
