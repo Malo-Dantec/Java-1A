@@ -55,18 +55,18 @@ public class Executable{
             System.out.println(val);
         }
 
-        System.out.println("Ensemble fini avec List<List<T>>");
-        Set<String> ensSS = new EnsembleFini<>();
-        ensSS.add("Bonjour");
-        ensSS.add("salut");
-        ensSS.add("Bonjous");
-        ensSS.add("roounjB");
-        System.out.println("ici si on choisit une petite taille (10) " +  
-                           "les chaines Bonjour et roounjB ont " + 
-                           "le même hashCode modulo la taille le " + 
-                           "dernier apparaît cette fois-ci");
-        for (String val : ensSS) {
-            System.out.println(val);
-        }
+        // System.out.println("Ensemble fini avec List<List<T>>");
+        // Set<String> ensSS = new EnsembleFini<>();
+        // ensSS.add("Bonjour");
+        // ensSS.add("salut");
+        // ensSS.add("Bonjous");
+        // ensSS.add("roounjB");
+        // System.out.println("ici si on choisit une petite taille (10) " +  
+        //                    "les chaines Bonjour et roounjB ont " + 
+        //                    "le même hashCode modulo la taille le " + 
+        //                    "dernier apparaît cette fois-ci");
+        // for (String val : ensSS) {
+        //     System.out.println(val);
+        // }
     }
 }
